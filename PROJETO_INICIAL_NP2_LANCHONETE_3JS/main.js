@@ -8,13 +8,7 @@ let pedido = [
     {codigo: 101, cliente: "Ana", valor: "25.50", entregue: false}
 ]
 function textoMenu(){
-        let opcoes = Number(prompt("Opção 1 - cadastrar"));
-        let opcao_lista = Number(prompt("Opção 2 - listar"))
-        let opcao_busca = Number(prompt("Opção 3-buscar"))
-        let opcao_entrega = Number(prompt("Opção 4 -entregar"))
-        let opcao_resumo = Number(prompt("opção 5 - Resumo"))
-        let opcao_JSON = Number(prompt("Opção 6 - Resumo Json"))
-        let opcao_sair = Number(prompt("Opção 0 - sair"))
+        let opcoes = Number(prompt("Opção 1 - cadastra\nOpção 2 - listarOpção\n 3-buscarOpção\n 4 -entregaropção\n 5 - Resumo\n   Opção 6 - Resumo Json\n Opção 0 - sair\n"));
     
 }
 
