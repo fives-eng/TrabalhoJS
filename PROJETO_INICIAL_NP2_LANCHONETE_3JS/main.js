@@ -4,9 +4,9 @@ import * as relatorio from "./relatorios.js"
 
 import * as pedido from "./pedidos.js"
 
-let pedido = [
-    {codigo: 101, cliente: "Ana", valor: "25.50", entregue: false}
-]
+//let pedido = [
+//    {codigo: 101, cliente: "Ana", valor: "25.50", entregue: false}
+//]
 function textoMenu(){
         let opcoes = Number(prompt("Opção 1 - cadastra\nOpção 2 - listarOpção\n 3-buscarOpção\n 4 -entregaropção\n 5 - Resumo\n   Opção 6 - Resumo Json\n Opção 0 - sair\n"));
     
