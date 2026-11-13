@@ -6,18 +6,54 @@ let pedidos = [
 ];
 
 // Implemente abaixo as operações de gerenciamento dos pedidos.
-function cadastrarPedido() {
-    // TODO: solicitar os dados, validar e adicionar um novo pedido ao array.
+export function cadastrarPedido(pedidos,codigo,cliente,valor) {
+    // TODO: solicitar os dados(fiz), validar(fiz) e adicionar um novo pedido ao array(fiz).
+    valor = number(prompt("digite o valor:"))
+    if (buscarPedido(pedidos,codigo)!==null){
+        return false
+    }
+    let novopedido = {
+        codigo:codigo,
+        cliente:cliente,
+        valor:valor,
+        entregue:false
+    }
+    pedidos.push(novopedido)
+    return true
 }
+export function listarPedidos(pedidos) {
+    if (pedidos.length===0){
+        console.log("nenhum pedido cadastrado")
+        return;
+    }
+    for (let i=0;i<pedidos.length;i++)
+        console.log(pedidos[i])
 
-function listarPedidos() {
     // TODO: listar os pedidos cadastrados.
 }
 
-function buscarPedido(codigo) {
+export function buscarPedido(pedidos,codigo) {
+    for (let i=0;i<pedidos.length;i++){
+        if (pedidos[i].codigo===codigo){
+            return pedidos[i]
+        }
+    }
+    return null
+    }
     // TODO: retornar o pedido correspondente ao código, se existir.
 }
 
-function entregarPedido(codigo) {
+export function entregarPedido(pedidos,codigo) {
+    let entrega= buscarPedido(pedidos,codigo)
+    if (entrega === null){
+        return "nao encontrada"
+    }
+    if(entrega.entregue===true){
+        return "ja entregue"
+    }
+    entrega.entregue=true
+    return "ok"
+    
+
     // TODO: alterar a situação de entrega do pedido encontrado.
 }
