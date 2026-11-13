@@ -41,7 +41,7 @@ export function buscarPedido(pedidos,codigo) {
     return null
     }
     // TODO: retornar o pedido correspondente ao código, se existir.
-}
+    
 
 export function entregarPedido(pedidos,codigo) {
     let entrega= buscarPedido(pedidos,codigo)
