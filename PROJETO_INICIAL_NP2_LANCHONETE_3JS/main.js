@@ -1,6 +1,19 @@
 // Trabalho NP2 — fluxo principal.
 // Utilize as funções de pedidos.js e relatorios.js neste arquivo.
-let pedido = []
+import * as relatorio from "./relatorios.js"
+
+import * as pedido from "./pedidos.js"
+
+
+
+function cadastrarPedido(){
+    let codigo = Number(prompt("codigo do pedido: "));
+    let nomeCliente = prompt("Nome do cliente: ");
+    let valor = Number(prompt("Valor do pedido: "));
+
+
+}
+relatorio.exibirResumo()
 
 function lerTexto(mensagem){
     let texto = prompt(mensagem)
@@ -31,7 +44,7 @@ function textoMenu(){
 }
 
 function buscarpedido(){
-    let codigo = prompt(Number("Codigo a usar: "));
+    let codigo = Number(prompt("Codigo a usar: "));
     locaçoes = buscarpedido(pedido,codigo);
     if (codigo  === ''){
         console.log ('Codigo não encontrado')
@@ -49,11 +62,32 @@ function iniciarSistema() {
     opcao = ' '
     while (opçao !== 0){
         opçao = textoMenu();
-        if (opçao == '')
-
+        if (opçao == ''){
+            console.log("opção invalida")
+        }
     }
     switch(iniciarSistema()){
         case '1':
+            functioncadastrarPedido();
+            break 
+        case '2':
+            pedido.listarPedidos();
+            break;
+        case '3':
+            functionbuscarPedido();
+            break;
+        case '4': 
+            pedido.entregarPedido();
+            break;
+        case '5':
+            relatorio.exibirResumo(); 
+            break; 
+        case '6':
+            relatorio.gerarResumoJSon();
+            break;
+        case '0':
+            break;
+
             
 
     }
