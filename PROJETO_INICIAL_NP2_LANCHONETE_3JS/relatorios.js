@@ -1,6 +1,6 @@
 // Trabalho NP2 — funções de relatórios.
 // Os pedidos estão armazenados no array 'pedidos', definido em pedidos.js.
-export function registrarPedido(){
+export function cadastrarPedido(){
     let codigo = Number(prompt("Informe o código"));
     let cliente = prompt("Nome do cliente");
     let valor = Number(prompt("Informe o valor"));

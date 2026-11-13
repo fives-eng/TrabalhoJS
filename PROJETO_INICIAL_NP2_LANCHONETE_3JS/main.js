@@ -4,43 +4,18 @@ import * as relatorio from "./relatorios.js"
 
 import * as pedido from "./pedidos.js"
 
-
-
-function cadastrarPedido(){
-    let codigo = Number(prompt("codigo do pedido: "));
-    let nomeCliente = prompt("Nome do cliente: ");
-    let valor = Number(prompt("Valor do pedido: "));
-
-
-}
-relatorio.exibirResumo()
-
-function lerTexto(mensagem){
-    let texto = prompt(mensagem)
-    if (mensagem===null){
-        return ''
-    }
-    return (lerTexto)
-}
-function lerNumero(mensagem){
-    texto = lerNumero(mensagem)
-    if (mensagem === ''){
-        return NaN
-    }
-    return (lerNumero)
-}
-
-
+let pedido = [
+    {codigo: 101, cliente: "Ana", valor: "25.50", entregue: false}
+]
 function textoMenu(){
-    return[
-        `1- Cadastrar`
-        `2- Listar`
-        `3 Buscar`
-        `4 Entregar`
-        `5- resumo`
-        `6 - resumo em JSON`
-        `0 - sair`
-    ]
+        let opcoes = Number(prompt("Opção 1 - cadastrar"));
+        let opcao_lista = Number(prompt("Opção 2 - listar"))
+        let opcao_busca = Number(prompt("Opção 3-buscar"))
+        let opcao_entrega = Number(prompt("Opção 4 -entregar"))
+        let opcao_resumo = Number(prompt("opção 5 - Resumo"))
+        let opcao_JSON = Number(prompt("Opção 6 - Resumo Json"))
+        let opcao_sair = Number(prompt("Opção 0 - sair"))
+    
 }
 
 function buscarpedido(){
@@ -68,8 +43,8 @@ function iniciarSistema() {
     }
     switch(iniciarSistema()){
         case '1':
-            functioncadastrarPedido();
-            break 
+            relatorio.cadastrar();
+            break;
         case '2':
             pedido.listarPedidos();
             break;
@@ -87,6 +62,8 @@ function iniciarSistema() {
             break;
         case '0':
             break;
+        default:
+            console.log("opção invalida")
 
             
 
